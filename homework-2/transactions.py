@@ -1,19 +1,22 @@
 """
-Create a program that generates transactions. A transaction is composed from a series of read/write operations on multiple variables. 
-Each operation can read and write from/to a variable only once. A write operation on a variable cannot be follow immediately by a read operation.
+Create a program that generates transactions. A transaction is composed from a series of read/write
+operations on multiple variables.
+
+Each operation can read and write from/to a variable only once. A write operation on a variable
+cannot be follow  by a read operation.
 
 Example of transaction:
 read(x), write(y), read(z), write(u)
 
-Task: Create a program that generates K random transaction where each transaction has M read operations and N write operations.
+Task: Create a program that generates K random transaction where each transaction has M read
+operations and N write operations.
 -------------------------------------
 Test at: `repl.it <https://repl.it/@Paulg2/DelayedAmusedOutliers>`_
 """
-import itertools
 
 from dataclasses import dataclass
 from random import sample, shuffle
-from typing import List, Iterator, Tuple, Any, Set
+from typing import List, Set
 
 
 @dataclass(eq=True, frozen=True)
@@ -37,16 +40,13 @@ def generate_possible_transaction(variables: List[str], reads: int, writes: int)
     return transaction
 
 
-def pairwise(iterable: Iterator) -> Iterator[Tuple[Any, Any]]:
-    a, b = itertools.tee(iterable)
-    next(b, None)
-    return zip(a, b)
-
-
 def is_valid_transaction(transaction: List[op]) -> bool:
-    for prev, current in pairwise(transaction):
-        if prev.variable == current.variable and prev.op_type == 'write' and current.op_type == 'read':
+    previous_written_variables = set()
+    for op in transaction:
+        if op.variable in previous_written_variables:
             return False
+        if op.op_type == 'write':
+            previous_written_variables.add(op.variable)
     return True
 
 
@@ -66,17 +66,16 @@ for _ in range(transactions):
 
 """
 Output: $ python transactions.py
-python main.py 
-[write(x), write(y), read(z), read(y)]
-[read(y), write(y), read(z), write(z)]
-[read(z), read(x), write(y), write(z)]
-[read(x), write(x), write(y), read(z)]
-[read(z), read(x), write(x), write(z)]
-[read(y), write(z), write(y), read(z)]
-[write(y), read(x), read(y), write(x)]
-[write(z), read(y), read(x), write(y)]
-[read(y), read(z), write(z), write(x)]
-[read(y), read(z), write(x), write(z)]
-[write(y), write(x), read(z), read(x)]
-[write(z), read(x), read(y), write(x)]
+[read(x), write(y), read(z), write(x)]
+[read(z), write(x), read(y), write(z)]
+[read(y), read(x), write(x), write(z)]
+[read(z), write(z), read(x), write(x)]
+[write(x), read(y), read(z), write(y)]
+[read(x), read(z), write(y), write(x)]
+[read(z), write(x), read(y), write(z)]
+[write(y), read(z), write(z), read(x)]
+[read(y), write(x), write(y), read(z)]
+[read(z), read(x), write(x), write(y)]
+[read(y), read(x), write(z), write(y)]
+[read(z), read(y), write(x), write(y)]
 """
