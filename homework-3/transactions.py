@@ -8,7 +8,7 @@ cannot be follow  by a read operation.
 Example of transaction:
 read(x), write(y), read(z), write(u)
 
-Task: Create a program that generates K random transaction where each transaction has M read
+Task: Create a program that generates all transaction where each transaction has M read
 operations and N write operations.
 -------------------------------------
 Test at: `repl.it <https://repl.it/@Paulg2/DelayedAmusedOutliers>`_
