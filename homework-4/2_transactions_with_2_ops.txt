@@ -1,0 +1,8 @@
+$ python shuffle_transactions.py -t 'r(a) r(b)' -t 'w(c) w(d)'
+
+#1 [t0-r(a), t0-r(b), t1-w(c), t1-w(d)]
+#2 [t0-r(a), t1-w(c), t0-r(b), t1-w(d)]
+#3 [t0-r(a), t1-w(c), t1-w(d), t0-r(b)]
+#4 [t1-w(c), t0-r(a), t0-r(b), t1-w(d)]
+#5 [t1-w(c), t0-r(a), t1-w(d), t0-r(b)]
+#6 [t1-w(c), t1-w(d), t0-r(a), t0-r(b)]
