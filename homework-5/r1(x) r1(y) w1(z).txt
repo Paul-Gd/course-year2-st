@@ -1,0 +1,4 @@
+s=[r1(x), r1(y), w1(z)]
+Hs[r1(x)]=f0x()
+Hs[r1(y)]=f0y()
+Hs[w1(z)]=f1z(f0x(),f0y())

@@ -1,0 +1,10 @@
+s=[r1(x), r3(x), w3(y), w2(x), r4(y), w4(x), r5(x), w5(z), w1(z)]
+Hs[r1(x)]=f0x()
+Hs[r3(x)]=f0x()
+Hs[w3(y)]=f3y(f0x())
+Hs[w2(x)]=f2x()
+Hs[r4(y)]=f3y(f0x())
+Hs[w4(x)]=f4x(f3y(f0x()))
+Hs[r5(x)]=f4x(f3y(f0x()))
+Hs[w5(z)]=f5z(f4x(f3y(f0x())))
+Hs[w1(z)]=f1z(f0x())
