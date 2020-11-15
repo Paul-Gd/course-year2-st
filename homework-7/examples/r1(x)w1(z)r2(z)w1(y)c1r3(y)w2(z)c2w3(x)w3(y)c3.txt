@@ -1,0 +1,5 @@
+s=[r1(x), w1(z), r2(z), w1(y), r3(y), w2(z), w3(x), w3(y)]
+H in CSR
+Topological order
+['1', '2', '3']
+['1', '3', '2']

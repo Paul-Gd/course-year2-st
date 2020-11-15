@@ -1,0 +1,2 @@
+s=[r2(y), r1(z), w5(x), r4(z), w1(y), r5(z), w4(x), w3(z), w1(x), w2(y), r3(y)]
+H not in CSR

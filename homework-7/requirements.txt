@@ -1,0 +1,3 @@
+# pip list of requirements
+networkx==2.5
+matplotlib==3.3
