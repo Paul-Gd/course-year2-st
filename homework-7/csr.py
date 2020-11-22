@@ -7,7 +7,7 @@ Usage:
 1. Install requirements
     $ pip install -r requirements.txt
 2. Run csr.py and pass the history
-    $ python csr.py 'r3(z)r1(y)w3(z)w1(y)r1(x)r2(y)w2(y)w1(x)r2(x)w2(x)c1c2c3
+    $ python csr.py 'r3(z)r1(y)w3(z)w1(y)r1(x)r2(y)w2(y)w1(x)r2(x)w2(x)c1c2c3'
 """
 import argparse
 import re
