@@ -1,0 +1,6 @@
+s=[r1(z), w5(x), r4(z), w1(y), r5(z), w4(x), c4, w3(z), w1(x), c1, w2(y), c5, c2, r3(y), c3]
+H in CSR
+Equivalent histories
+['5', '4', '1', '2', '3']
+In OCSR
+Not in COCSR
