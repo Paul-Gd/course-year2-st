@@ -1,0 +1,4 @@
+s=[r3(z), r1(y), w3(z), w1(y), r1(x), r2(y), w2(y), w1(x), r2(x), w2(x), c1, a2, c3]
+exp(s)=[r3(z), r1(y), w3(z), w1(y), r1(x), r2(y), w2(y), w1(x), r2(x), w2(x), c1, w2^-1(x), w2^-1(y), c2, c3]
+H in CSR
+H is in XCSR!
